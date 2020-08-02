@@ -1,15 +1,17 @@
 import React from "react";
-
 import Auth from "./components/auth";
+import Contacts from "./components/contacts";
 import "./App.css";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <div className="container">
-        <Auth />
+        <Route path="/" exact component={Auth}></Route>
+        <Route path="/contacts" exact component={Contacts}></Route>        
       </div>
-    </div>
+    </Router>
   );
 }
 
