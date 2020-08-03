@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Auth from "./components/auth";
 import Contacts from "./components/contacts";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 import * as firebase from "firebase";
 
