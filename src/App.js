@@ -11,7 +11,7 @@ export default class App extends Component {
     this.state = {
       email: "",
       password: "",
-      hasAccount: false,
+      hasAccount: true,
       key: "",
       value: "",
       name: "",

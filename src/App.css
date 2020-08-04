@@ -1,11 +1,20 @@
 .container {
   padding: 40px 0;
 }
-.form-container{
+.form-container {
   width: 300px;
   margin: 0 auto;
+}
+.card {
+  margin-bottom: 20px;
 }
 .btn-container {
   display: flex;
   justify-content: space-between;
+}
+.btn-contacts {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border: 1px solid rgba(0,0,0,.125);
 }
