@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Auth from "./components/auth";
 import Contacts from "./components/contacts";
+import ContactForm from "./components/contactform";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import * as firebase from "firebase";
@@ -17,17 +18,14 @@ export default class App extends Component {
       name: "",
     };
   }
-  componentDidMount() {    
+  componentDidMount() {
     const db = firebase.database();
     const name = db.ref("name");
     name.on("value", (elem) => {
       this.setState({ name: elem.val() });
     });
-    
-      
-    
   }
- 
+
   handleChange = ({ target: { value, id } }) => {
     this.setState({
       [id]: value,
@@ -73,11 +71,15 @@ export default class App extends Component {
 
   render() {
     const { hasAccount, users } = this.state;
-       
+
     return (
       <div className="container">
         {hasAccount ? (
-          <Contacts />
+          <div className="row">
+            <div className="col-md-12">
+              <ContactForm />
+            </div>
+          </div>
         ) : (
           <Auth
             handleChange={this.handleChange}

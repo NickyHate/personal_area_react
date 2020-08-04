@@ -14,7 +14,9 @@ const firebaseConfig = {
   appId: "1:903620000038:web:675e7bd9f0c25a57f369e7"
 };
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+var fireDB = firebase.initializeApp(firebaseConfig);
+
+
 
 
 ReactDOM.render(
@@ -24,4 +26,5 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
+export default fireDB.database().ref();
 
