@@ -1,6 +1,9 @@
 .container {
-  width: 300px;
   padding: 40px 0;
+}
+.form-container{
+  width: 300px;
+  margin: 0 auto;
 }
 .btn-container {
   display: flex;

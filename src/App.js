@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Auth from "./components/auth";
 import Contacts from "./components/contacts";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import * as firebase from "firebase";
 
@@ -17,13 +17,17 @@ export default class App extends Component {
       name: "",
     };
   }
-  componentDidMount() {
+  componentDidMount() {    
     const db = firebase.database();
     const name = db.ref("name");
     name.on("value", (elem) => {
       this.setState({ name: elem.val() });
     });
+    
+      
+    
   }
+ 
   handleChange = ({ target: { value, id } }) => {
     this.setState({
       [id]: value,
@@ -36,14 +40,17 @@ export default class App extends Component {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      .catch((error) => alert(error));
-    // alert("Your account has been created");
+      .catch((error) => {
+        if (error) {
+          alert(error);
+        }
+      });
   };
 
   getData = () => {
     const db = firebase.database();
     const accounts = db.ref("accounts");
-    accounts.on("value", (elem) => console.log(elem.val(), "123"));
+    accounts.on("value", (elem) => console.log(elem.val()));
   };
 
   sendData = () => {
@@ -61,12 +68,12 @@ export default class App extends Component {
       .then((response) => {
         this.setState({ hasAccount: true });
       })
-      .catch((error) => console.log(error));
+      .catch((error) => alert(error));
   };
 
   render() {
-    const { hasAccount } = this.state;
-    this.getData(); 
+    const { hasAccount, users } = this.state;
+       
     return (
       <div className="container">
         {hasAccount ? (

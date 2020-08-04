@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { Form, Button } from "bootstrap-4-react";
 
+
+
 export default class Auth extends Component {
     render(){
     return (
+        <div className="form-container">
         <Form>
           <Form.Group>
             <label htmlFor="exampleInputEmail1">Email address</label>
@@ -40,6 +43,7 @@ export default class Auth extends Component {
           </Button>
           </div>
         </Form>
+        </div>
     )
     }
 }
