@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/personal_area_react/static/css/main.0fff025d.chunk.css",
+    "main.js": "/personal_area_react/static/js/main.bac247f0.chunk.js",
+    "main.js.map": "/personal_area_react/static/js/main.bac247f0.chunk.js.map",
+    "runtime-main.js": "/personal_area_react/static/js/runtime-main.75d28f6a.js",
+    "runtime-main.js.map": "/personal_area_react/static/js/runtime-main.75d28f6a.js.map",
+    "static/css/2.af3c1da9.chunk.css": "/personal_area_react/static/css/2.af3c1da9.chunk.css",
+    "static/js/2.f72c819c.chunk.js": "/personal_area_react/static/js/2.f72c819c.chunk.js",
+    "static/js/2.f72c819c.chunk.js.map": "/personal_area_react/static/js/2.f72c819c.chunk.js.map",
+    "index.html": "/personal_area_react/index.html",
+    "precache-manifest.30c99c7f60245d2e6beedc44185d4577.js": "/personal_area_react/precache-manifest.30c99c7f60245d2e6beedc44185d4577.js",
+    "service-worker.js": "/personal_area_react/service-worker.js",
+    "static/css/2.af3c1da9.chunk.css.map": "/personal_area_react/static/css/2.af3c1da9.chunk.css.map",
+    "static/css/main.0fff025d.chunk.css.map": "/personal_area_react/static/css/main.0fff025d.chunk.css.map",
+    "static/js/2.f72c819c.chunk.js.LICENSE.txt": "/personal_area_react/static/js/2.f72c819c.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.75d28f6a.js",
+    "static/css/2.af3c1da9.chunk.css",
+    "static/js/2.f72c819c.chunk.js",
+    "static/css/main.0fff025d.chunk.css",
+    "static/js/main.bac247f0.chunk.js"
+  ]
+}
