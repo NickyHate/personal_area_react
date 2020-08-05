@@ -26,14 +26,7 @@ export default class Auth extends Component {
               onChange={this.props.handleChange}
             />
           </Form.Group>
-          <Form.Group>
-            <Form.Check>
-              <Form.CheckInput type="checkbox" id="exampleCheck1" />
-              <Form.CheckLabel htmlFor="exampleCheck1">
-                Check me out
-              </Form.CheckLabel>
-            </Form.Check>
-          </Form.Group>
+        
           <div className="btn-container">
           <Button primary type="submit" onClick={this.props.signIn}>
             Login

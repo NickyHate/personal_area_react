@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Auth from "./components/auth";
-import Contacts from "./components/contacts";
 import ContactForm from "./components/contactform";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import * as firebase from "firebase";
+
 
 export default class App extends Component {
   constructor(props) {
@@ -12,7 +12,7 @@ export default class App extends Component {
     this.state = {
       email: "",
       password: "",
-      hasAccount: true,
+      hasAccount: false,
       key: "",
       value: "",
       name: "",
@@ -33,14 +33,17 @@ export default class App extends Component {
   };
 
   createAccount = (event) => {
-    event.preventDefault();
     const { email, password } = this.state;
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      .catch((error) => {
-        if (error) {
-          alert(error);
+      .catch(function(error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        if (errorCode == 'auth/weak-password') {
+          alert('The password is too weak.');
+        } else {
+          alert(errorMessage);
         }
       });
   };
@@ -70,7 +73,7 @@ export default class App extends Component {
   };
 
   render() {
-    const { hasAccount, users } = this.state;
+    const { hasAccount } = this.state;
 
     return (
       <div className="container">

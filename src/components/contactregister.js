@@ -10,6 +10,18 @@ export default function ContactRegister(props) {
 
   var [values, setValues] = useState(initialFieldValues);
 
+  useEffect(() => {
+    if(props.currentId == '')
+    setValues({
+        ...initialFieldValues,
+    })
+    else {
+        setValues({
+            ...props.contactObject[props.currentId]
+        })
+    }
+  }, [props.currentId, props.contactObject])
+
   const handleInputChange = (e) => {
     var { name, value } = e.target;
     setValues({
@@ -24,6 +36,8 @@ export default function ContactRegister(props) {
   };
 
   return (
+      <>
+      <h3>Registration form</h3>
     <form autoComplete="off" onSubmit={handleFormSubmit}>
       <div className="form-group input-group">
         <div className="input-group-prepend">
@@ -81,10 +95,11 @@ export default function ContactRegister(props) {
       <div className="form-group">
         <input
           type="submit"
-          value="Save"
+          value={props.currentId == '' ? "Save" : "Update"}
           className="btn btn-primary btn-block"
         />
       </div>
     </form>
+    </>
   );
 }
