@@ -12,7 +12,7 @@ export default class App extends Component {
     this.state = {
       email: "",
       password: "",
-      hasAccount: true,
+      hasAccount: false,
       key: "",
       value: "",
       name: "",
