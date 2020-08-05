@@ -33,6 +33,7 @@ export default function ContactRegister(props) {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     props.addOrEdit(values);
+    
   };
 
   return (

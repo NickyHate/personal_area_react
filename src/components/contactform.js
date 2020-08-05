@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ContactRegister from "./contactregister";
+import * as firebase from "firebase";
 import firebaseDb from "../index";
 
 export default function ContactForm() {
@@ -8,18 +9,16 @@ export default function ContactForm() {
       firebaseDb.child("contacts").push(obj, (err) => {
         if (err) {
           console.log(err);
-        }
-        else {
-            setCurrentId('')
+        } else {
+          setCurrentId("");
         }
       });
     } else {
       firebaseDb.child(`contacts/${currentId}`).set(obj, (err) => {
         if (err) {
           console.log(err);
-        }
-        else {
-            setCurrentId('')
+        } else {
+          setCurrentId("");
         }
       });
     }
@@ -35,27 +34,23 @@ export default function ContactForm() {
         setContactObject({
           ...snapshot.val(),
         });
-      }
-      else {
-        setContactObject({
-            
-          });
+      } else {
+        setContactObject({});
       }
     });
   }, []);
 
-  const onDelete = key => {
-    if(window.confirm('Are you shure to delete this contact?')) {
-        firebaseDb.child(`contacts/${key}`).remove( err => {
-            if(err) {
-                console.log(err)
-            }
-            else {
-                setCurrentId('');
-            }
-        })
+  const onDelete = (key) => {
+    if (window.confirm("Are you shure to delete this contact?")) {
+      firebaseDb.child(`contacts/${key}`).remove((err) => {
+        if (err) {
+          console.log(err);
+        } else {
+          setCurrentId("");
+        }
+      });
     }
-  }
+  };
 
   return (
     <>
@@ -94,7 +89,12 @@ export default function ContactForm() {
                       >
                         <i className="fas fa-pencil-alt"></i>
                       </a>
-                      <a className="btn text-danger" onClick={() => {onDelete(id)}}>
+                      <a
+                        className="btn text-danger"
+                        onClick={() => {
+                          onDelete(id);
+                        }}
+                      >
                         <i className="fas fa-trash-alt"></i>
                       </a>
                     </td>
