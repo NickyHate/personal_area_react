@@ -1,5 +1,6 @@
 import React from 'react'
 import ContactRegister from './contactregister'
+import ContactList from './contactlist'
 import firebaseDb from "../index";
 
 export default function ContactForm() {
@@ -22,7 +23,7 @@ export default function ContactForm() {
                 <ContactRegister addOrEdit={addOrEdit}/>
             </div>
             <div className="col-md-7">
-                <div>list of contacts</div>
+                <ContactList/>
             </div>
         </div>
         </>
